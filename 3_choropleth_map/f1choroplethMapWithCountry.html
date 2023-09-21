@@ -49,21 +49,17 @@
           "lookup": "properties.NAME",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/IceFrosterz/Vega-Lite-main/main/3_choropleth_map/data/f1_data.csv?token=GHSAT0AAAAAACGJDVCOVH2HVVKEWLBECANWZILVKXA"
+              "url": "https://raw.githubusercontent.com/IceFrosterz/3179/main/3_choropleth_map/data/f1_data.csv"
             },
             "key": "Country",
             "fields": ["Races Hosted, Total Points, Total Wins"]
           }
         },
-        {
-          "calculate": "datum.Confirmed/datum.Races Hosted",
-          "as": "Races Hosted"
-        }
       ],
       "mark": {"type": "geoshape", "stroke": "white"},
       "encoding": {
         "color": {
-          "field": "Races",
+          "field": "Total Wins",
           "type": "quantitative",
           "scale": {
             "type": "threshold",

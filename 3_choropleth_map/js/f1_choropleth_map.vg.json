@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "F1 Data",
+    "title": "COVID-19 Active Cases (10 Oct 2020)",
     "width": 800,
     "height": 400,
     "projection": {"type": "equalEarth"},
@@ -13,13 +13,13 @@
         "lookup": "properties.NAME",
         "from": {
           "data": {
-            "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/data/f1_data.csv"
+            "url": "https://raw.githubusercontent.com/IceFrosterz/3179/main/3_choropleth_map/data/f1_data.csv"
           },
           "key": "Country",
-          "fields": ["Active"]
+          "fields": ["Race Hosted"]
         }
       },
-      {"calculate": "datum.Races Hosted + 0.1", "as": "Races Hosted"}
+      { "calculate": "datum.Races Hosted", "as": "Races Hosted"}
     ],
     "mark": {"type": "geoshape"},
     "encoding": {
