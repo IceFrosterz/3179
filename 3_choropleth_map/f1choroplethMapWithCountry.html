@@ -10,11 +10,11 @@
   <script>
     const spec = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "F1 Data",
-  "width": 800,
-  "height": 400,
+  "title": "F1 Race Counts by Country",
+  "width": 1200,
+  "height": 700,
   "data": {
-    "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+    "url": "https://raw.githubusercontent.com/IceFrosterz/3179/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
   },
   "projection": {"type": "equalEarth"},
@@ -31,14 +31,14 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+        "url": "https://raw.githubusercontent.com/IceFrosterz/3179/main/7_others/oceans.topojson",
         "format": {"type": "topojson", "feature": "oceans"}
       },
       "mark": {"type": "geoshape", "fill": "skyblue"}
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
+        "url": "https://raw.githubusercontent.com/IceFrosterz/3179/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
         "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
       },
       "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
@@ -62,9 +62,9 @@
           "field": "Number",
           "type": "quantitative",
           "scale": {
-            "type": "threshold",
-            "domain": [0, 3, 20, 50, 100],
-            "range": ["#E53935", "#FFA726", "#43A047", "#1976D2","#8E24AA"]
+            "type": "sequential",
+            "domain": [0, 10, 30, 50, 70, 105],
+            "range": ["#d3d3d3", "#00FF00", "##7FFF00", "#ADFF2F","#008000", "#006400"]
           }
         },
         "tooltip": [
@@ -84,7 +84,7 @@
           "lookup": "properties.NAME",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/data/countryInfo.csv"
+              "url": "https://raw.githubusercontent.com/IceFrosterz/3179/main/3_choropleth_map/data/countryInfo.csv"
             },
             "key": "name",
             "fields": ["latitude", "longitude"]
@@ -98,7 +98,7 @@
         "text": {"field": "properties.NAME", "type": "nominal"},
         "opacity": {
           "condition": {
-            "test": "datum['properties.NAME'] == 'China' || datum['properties.NAME'] == 'Brazil' || datum['properties.NAME'] == 'Australia' || datum['properties.NAME'] == 'Malaysia' ||  datum['properties.NAME'] == 'Yemen' ||  datum['properties.NAME'] == 'United States of America'",
+            "test": "datum['properties.NAME'] == 'China' || datum['properties.NAME'] == 'Brazil' || datum['properties.NAME'] == 'Australia' ||  datum['properties.NAME'] == 'Canada' || datum['properties.NAME'] == 'Russia'",
             "value": 1
           },
           "value": 0
