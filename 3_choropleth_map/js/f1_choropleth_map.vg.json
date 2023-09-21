@@ -16,21 +16,20 @@
             "url": "https://raw.githubusercontent.com/IceFrosterz/3179/main/3_choropleth_map/data/f1_data.csv"
           },
           "key": "Country",
-          "fields": ["Race Hosted"]
+          "fields": ["Number"]
         }
-      },
-      { "calculate": "datum.Races Hosted", "as": "Races Hosted"}
+      }
     ],
     "mark": {"type": "geoshape"},
     "encoding": {
       "color": {
-        "field": "Races Hosted",
+        "field": "Number",
         "type": "quantitative",
         "scale": {"type": "log"}
       },
       "tooltip": [
         {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-        {"field": "Races Hosted", "type": "quantitative"}
+        {"field": "Number", "type": "quantitative"}
       ]
     }
   }
